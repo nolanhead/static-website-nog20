@@ -13,5 +13,5 @@ jobs:
   - id: 'upload-file'
     uses: 'google-github-actions/upload-cloud-storage@v2'
     with:
-      path: '/static-website.html'
+      path: '/index.html'
       destination: 'static-website-bucket-nog20'
