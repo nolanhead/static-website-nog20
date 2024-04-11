@@ -4,23 +4,24 @@ on:
       - main
 
 jobs:
-  job_id:
-    permissions:
-      contents: 'read'
-      id-token: 'write
+  deploy:
+    job_id:
+      permissions:
+        contents: 'read'
+        id-token: 'write
  
-  steps:
-  - id: 'checkout'
-    uses: 'actions/checkout@v4'
+    steps:
+    - id: 'checkout'
+      uses: 'actions/checkout@v4'
   
-  - id: 'auth'
-    uses: 'google-github-actions/auth@v2'
-    with:
-      service_account: 'my-service-account@kvm-assign1.iam.gserviceaccount.com'
-      workload_identity_provider: 'projects/638432563080/locations/global/workloadIdentityPools/github/providers/static-website-iam-pool'
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        service_account: 'my-service-account@kvm-assign1.iam.gserviceaccount.com'
+        workload_identity_provider: 'projects/638432563080/locations/global/workloadIdentityPools/github/providers/static-website-iam-pool'
 
-  - id: 'upload-file'
-    uses: 'google-github-actions/upload-cloud-storage@v2'
-    with:
-      path: 'index.html'
-      destination: 'static-website-bucket-nog20'
+    - id: 'upload-file'
+      uses: 'google-github-actions/upload-cloud-storage@v2'
+      with:
+        path: 'index.html'
+        destination: 'static-website-bucket-nog20'
