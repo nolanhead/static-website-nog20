@@ -1,0 +1,4 @@
+-uses: 'google-github-actions/auth@v2'
+  with:
+    service_account: 'my-service-account@kvm-assign1.iam.gserviceaccount.com'
+    workload_identity_provider: 'projects/638432563080/locations/global/workloadIdentityPools/github/providers/static-website-iam-pool'
