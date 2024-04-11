@@ -24,3 +24,8 @@ jobs:
     with:
       path: 'index.html'
       destination: 'static-website-bucket-nog20'
+
+  - id: 'uploaded-files'
+      uses: 'foo/bar@v1'
+      env:
+        file: '${{ steps.upload-file.outputs.uploaded }}'
