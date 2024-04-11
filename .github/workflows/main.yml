@@ -3,13 +3,12 @@ on:
     branches:
       - main
 
+permissions:
+      contents: 'read'
+      id-token: 'write
+
 jobs:
   deploy:
-    job_id:
-      permissions:
-        contents: 'read'
-        id-token: 'write
- 
     steps:
     - id: 'checkout'
       uses: 'actions/checkout@v4'
